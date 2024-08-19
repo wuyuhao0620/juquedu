@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机二维码展示</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img id="qrCode" src="" alt="二维码">
+    <script>
+        const images = [
+            "https://line.me/ti/p/UpaQQ4eRtD", 
+            "https://line.me/ti/p/_7U1bTXSzA"
+        ];
+
+        function showRandomQRCode() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            document.getElementById("qrCode").src = images[randomIndex];
+        }
+
+        window.onload = showRandomQRCode;
+    </script>
+</body>
+</html>
